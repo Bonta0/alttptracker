@@ -20,8 +20,9 @@
         mapmode: query.f.charAt(13),
         spoilermode: query.f.charAt(14),
         spheresmode: query.f.charAt(15),
-		mystery: query.f.charAt(16),
-		doorshuffle: query.f.charAt(17),
+        autotrack: query.f.charAt(16),
+		mystery: query.f.charAt(17),
+		doorshuffle: query.f.charAt(18),
         sprite: query.sprite
     };
 	

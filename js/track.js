@@ -1913,7 +1913,7 @@
 			
 			var fParam = currentURL.substr(currentURL.indexOf("f=") + 2, 17);
 			
-			var replaceParam = flags.gametype + document.getElementById('entranceselect').value + flags.bossshuffle + flags.enemyshuffle + flags.glitches + flags.dungeonitems + flags.itemplacement + flags.goals + flags.opentower + flags.opentowercount + flags.ganonvuln + flags.ganonvulncount + flags.swordmode + flags.mapmode + flags.spoilermode + flags.spheresmode + 'Y';
+			var replaceParam = flags.gametype + document.getElementById('entranceselect').value + flags.bossshuffle + flags.enemyshuffle + flags.glitches + flags.dungeonitems + flags.itemplacement + flags.goals + flags.opentower + flags.opentowercount + flags.ganonvuln + flags.ganonvulncount + flags.swordmode + flags.mapmode + flags.spoilermode + flags.spheresmode + flags.autotrack + 'Y';
 					
 			currentURL = currentURL.replace(fParam, replaceParam);
 			
@@ -2384,6 +2384,9 @@
 		} else {
 			document.getElementById('spheres').style.visibility = 'visible';
 		}
+
+        if (flags.autotrack == 'Y')
+            autotrackConnect();
 		
 		if (flags.swordmode === 'A') {
 			toggle('sword');

@@ -12,6 +12,9 @@ function load_cookie() {
 		if (c.indexOf('s-Y') > -1) {
 			document.getElementById("sphereyes").checked = true;
 		}
+		if (c.indexOf('a-Y') > -1) {
+			document.getElementById("autotrackyes").checked = true;
+		}
 		if (c.indexOf('p-') > -1) {
 			var sprite = c.substr(c.indexOf('p-') + 2);
 			if (sprite.indexOf(';') > -1) {
@@ -44,13 +47,14 @@ function launch_tracker() {
 	var map = document.querySelector('input[name="mapgroup"]:checked').value;
 	var spoiler = document.querySelector('input[name="spoilergroup"]:checked').value;
 	var sphere = document.querySelector('input[name="spheregroup"]:checked').value;
+	var autotrack = document.querySelector('input[name="autotrackgroup"]:checked').value;
 	var mystery = document.querySelector('input[name="mysterygroup"]:checked').value;
 	
 	var width = map === "M" ? 1340 : 448;
 	var height = sphere === "Y" ? map === "C" ? 988 : 744 : map === "C" ? 692 : 448;
 	
 	if (document.getElementById("remembersettings").checked == true) {
-		var settings = "m-" + map + "|s-" + sphere + "|p-" + sprite;
+		var settings = "m-" + map + "|s-" + sphere + "|a-" + autotrack + "|p-" + sprite;
 		document.cookie = "settings=" + settings + "; expires=Sat, 1 Jan 2023 12:00:00 UTC";
 	} else {
 		document.cookie = "settings=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
@@ -63,7 +67,7 @@ function launch_tracker() {
 		alert('NOTICE: There is currently no logic implemented in Inverted Entrance, all locations will be flagged as available.');
 	}
 
-	var trackerWindow = window.open('{tracker}.html?f={type}{entrance}{boss}{enemy}{glitches}{dungeon}{item}{goal}{tower}{towercrystals}{ganon}{ganoncrystals}{swords}{map}{spoiler}{sphere}{mystery}{door}&sprite={sprite}{compact}'
+	var trackerWindow = window.open('{tracker}.html?f={type}{entrance}{boss}{enemy}{glitches}{dungeon}{item}{goal}{tower}{towercrystals}{ganon}{ganoncrystals}{swords}{map}{spoiler}{sphere}{autotrack}{mystery}{door}&sprite={sprite}{compact}'
 			.replace('{tracker}', trackerName)
 			.replace('{type}', type)
 			.replace('{entrance}', entrance)
@@ -81,6 +85,7 @@ function launch_tracker() {
 			.replace('{map}', map)
 			.replace('{spoiler}', spoiler)
 			.replace('{sphere}', sphere)
+			.replace('{autotrack}', autotrack)
 			.replace('{sprite}', sprite)
 			.replace('{mystery}', mystery)
 			.replace('{door}', door)

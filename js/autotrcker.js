@@ -307,7 +307,8 @@ function autotrackDoTracking(data) {
             toggle(item);
     };
 
-    //items["bomb"] = (data[0x343] > 0 ? 1 : 0);
+    if (changed(0x343)) // Bombs
+        setitem("bomb", data[0x343] > 0);
 
     if (changed(0x3C5) && data[0x3C5] >= 3) // Agahnim Killed
         setitem("agahnim", true);
@@ -331,7 +332,7 @@ function autotrackDoTracking(data) {
 
     if (newbit(0x38C, 0x04))
         setitem("shovel", true);
-    if (newbit(0x38C, 0x02))
+    if (newbit(0x38C, 0x03))
         setitem("flute", true);
 
     if (newbit(0x342, 0x01))
@@ -397,8 +398,8 @@ function autotrackDoTracking(data) {
     if (changed(0x35B))
         setitem("tunic", data[0x35B] + 1);
 
-    //if (changed(0x37B))
-    //    setitem("mpupgrade", data[0x37B]);
+    if (changed(0x37B))
+        setitem("magic", data[0x37B] > 0);
 
     var prevbottles = -1;
     if (autotrackPrevData !== null)

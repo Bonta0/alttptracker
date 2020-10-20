@@ -231,18 +231,18 @@ function autotrackDoTracking(data) {
     updatechest(52, 0x2E8, 0x40); // Dig Game
     updatechest(53, 0x301, 0x40); // Zora's Ledge
     updatechest(54, 0x2AA, 0x40); // Dig/Flute Spot
-    updatechest_group(55, [[0x022, 0x10], [0x022, 0x20], [0x022, 0x40]]); // Sewers Left + Middle + Right
+    //updatechest_group(55, [[0x022, 0x10], [0x022, 0x20], [0x022, 0x40]]); // Sewers Left + Middle + Right
     updatechest_group(56, [[0x3C6, 0x01], [0x0AA, 0x10]]); // Uncle + Passage
-    updatechest_group(57, [[0x0E4, 0x10], [0x0E2, 0x10], [0x100, 0x10]]); // Hyrule Castle Map + Boomerang + Zelda
-    updatechest(58, 0x024, 0x10); // Sanctuary
+    //updatechest_group(57, [[0x0E4, 0x10], [0x0E2, 0x10], [0x100, 0x10]]); // Hyrule Castle Map + Boomerang + Zelda
+    //updatechest(58, 0x024, 0x10); // Sanctuary
     updatechest(59, 0x411, 0x80); // Magic Bat
     updatechest(60, 0x411, 0x04); // Blacksmith
     updatechest_group(61, [[0x22C, 0x10], [0x22C, 0x20]]); // Fat Fairy Left + Right
     updatechest(62, 0x300, 0x40); // Pedestal
-    updatechest(63, 0x064, 0x10); // Hyrule Castle - Dark Cross
+    //updatechest(63, 0x064, 0x10); // Hyrule Castle - Dark Cross
     updatechest_group(64, [[0x228, 0x10], [0x228, 0x20]]); // Waterfall Fairy Left + Right
-    updatechest(65, 0x1C0, 0x10); // Castle Tower - Room 03
-    updatechest(66, 0x1A0, 0x10); // Castle Tower - Dark Maze
+    //updatechest(65, 0x1C0, 0x10); // Castle Tower - Room 03
+    //updatechest(66, 0x1A0, 0x10); // Castle Tower - Dark Maze
 
     function update_boss(boss, offset) {
         if (newbit(offset, 0x08) && !items[boss])

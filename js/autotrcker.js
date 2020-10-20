@@ -303,6 +303,8 @@ function autotrackDoTracking(data) {
     updatebigkey("half1", 0x367, 0x08);
 
     function setitem(item, value) {
+        if (flags['swordmode'] == 'S' && item == 'sword')
+            value = 0;
         while (items[item] != value)
             toggle(item);
     };
@@ -390,7 +392,7 @@ function autotrackDoTracking(data) {
         setitem("glove", data[0x354]);
 
     if (changed(0x359))
-        setitem("sword", data[0x359]);
+        setitem("sword", (data[0x359] == 0xFF) ? 0 : data[0x359]);
 
     if (changed(0x35A))
         setitem("shield", data[0x35A]);
